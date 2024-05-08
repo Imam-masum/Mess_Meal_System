@@ -4,5 +4,6 @@
     {
         public long Id { get; set; }
         public long MemberId { get; set; }
+        public bool IsDelete { get; set; }
     }
 }
