@@ -1,26 +1,18 @@
-﻿using Domain.Entities.Auth;
-using Domain.Entities.Base;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Entities.Member
+namespace Domain.DTO
 {
-    public class Members:BaseEntity
+    public class MemberDto
     {
-        [Required]
-        [StringLength(100)]
+        public long MemberId { get; set; }
         public string MemberName { get; set; } = string.Empty;
         public string MemberAddress { get; set; } = string.Empty;
         public string MemberContactNo { get; set; } = string.Empty;
-
-        [Required(ErrorMessage ="Room can not be blank.")]
         public string RoomNo { get; set; } = string.Empty;
-
-        //navigation
-        public ICollection<ApplicationUser> applicationUsers { get; set; } = null!;
     }
 }
